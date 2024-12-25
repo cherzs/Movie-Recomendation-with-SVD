@@ -1,4 +1,4 @@
-# 🎬 **Movie Recommendation System Project**
+# 🎬 **Movie Recommendation System**
 
 ## 🚀 **Project Overview**
 This project aims to develop an accurate and personalized movie recommendation system using two datasets: one containing basic movie information, including the cast and crew, and the other containing detailed metadata such as budget, genre, popularity, and ratings. The goal is to leverage these datasets to recommend movies to users based on their preferences.
@@ -40,6 +40,9 @@ This project utilizes two datasets from Kaggle, providing comprehensive data abo
    - 
 - The columns in `tmdb_5000_credits` were renamed for clarity, and data from `tmdb_5000_credits` was merged with `tmdb_5000_movies` based on the `id`.
 - The `overview` column, which contains plot summaries, was preprocessed by filling missing values with an empty string.
+  
+  ### Here is visualization of popular movies
+![image](https://github.com/user-attachments/assets/308fa771-3b9a-4378-b4dc-6e92a77e8444)
 
 ---
 
@@ -67,7 +70,7 @@ This project leverages a variety of tools and libraries to process data, build m
 - **Collaborative Filtering**: A method that recommends movies based on user-item interactions, utilizing techniques like matrix factorization.
   
 ### **Content-Based Filtering (TF-IDF & Cosine Similarity)**
-You implemented a content-based filtering approach using the `overview` column of movies:
+ implemented a content-based filtering approach using the `overview` column of movies:
 1. **TF-IDF Vectorizer**: A `TfidfVectorizer` was applied to the `overview` column to transform text into numerical vectors.
 2. **Cosine Similarity**: Cosine similarity was used to measure the similarity between movies based on their overview text. This allows for recommending movies that are similar to a given movie based on plot summaries.
 
@@ -78,33 +81,58 @@ You implemented a content-based filtering approach using the `overview` column o
 ---
 
 ### **Popularity-Based Filtering**
-You analyzed movie popularity by sorting movies based on the `popularity` column. You visualized the top 6 most popular movies using a bar chart:
+ analyzed movie popularity by sorting movies based on the `popularity` column.  visualized the top 6 most popular movies using a bar chart:
 - **Top 6 Movies**: Movies such as "The Avengers", "Avengers: Infinity War", and "Guardians of the Galaxy" were the most popular in the dataset.
 
 ---
 
 ### **Collaborative Filtering (SVD)**
-You implemented a collaborative filtering approach using the `SVD` (Singular Value Decomposition) algorithm from the `surprise` library:
+ implemented a collaborative filtering approach using the `SVD` (Singular Value Decomposition) algorithm from the `surprise` library:
 1. **Grid Search**: A `GridSearchCV` was used to tune hyperparameters (e.g., number of factors, learning rate, regularization) for the SVD model.
 2. **Best RMSE**: The best root mean square error (RMSE) score from the grid search was evaluated, and the parameters giving the lowest RMSE were chosen.
 3. **Prediction**: After fitting the model to the training set, the model was used to predict movie ratings.
 
+## Results
+
+### Best RMSE from GridSearchCV:
+
+| **Metric**        | **Value**            |
+|-------------------|----------------------|
+| Best RMSE Score   | 0.8915               |
+
+### RMSE on Testset:
+
+| **Metric**        | **Value**            |
+|-------------------|----------------------|
+| RMSE on Testset   | 0.8868               |
+
+---
 ---
 
 ### **Word2Vec for Content Similarity**
-You trained a Word2Vec model on movie overviews to create word embeddings for each movie's plot summary:
+ trained a Word2Vec model on movie overviews to create word embeddings for each movie's plot summary:
 1. **Word Embeddings**: The Word2Vec model created vector representations for each overview. Cosine similarity was then computed between these vectors.
-2. **Example Recommendations**: By using Word2Vec, you recommended similar movies to a given title based on the vector similarity of their overviews.
+2. **Example Recommendations**: By using Word2Vec,  recommended similar movies to a given title based on the vector similarity of their overviews.
 
 #### **Example**:
-- **For "The Dark Knight Rises"**: The same movies such as "Batman Begins", "The Dark Knight", and "Inception" were recommended using Word2Vec.
+- **For "The Dark Knight Rises"**: 
+![image](https://github.com/user-attachments/assets/627e1fd9-b413-4e22-92e1-1ff73138e5c2)
+- **For "The Avengerss"**:
+![image](https://github.com/user-attachments/assets/1eec63d4-4c65-41f1-8ecd-5d7bc7b24497)
 
 ---
 
 ### **Trend Analysis (Rating Over Time)**
-You analyzed how movie ratings changed over time:
-- You grouped movies by their release year and calculated the average rating for each year.
+ analyzed how movie ratings changed over time:
+-  grouped movies by their release year and calculated the average rating for each year.
 - **Visualization**: A line plot was generated showing the trend of average ratings over time, indicating whether movie ratings are increasing or decreasing over the years.
+![image](https://github.com/user-attachments/assets/9dd35fd4-249e-4043-bcda-ebead608fcf4)
+
+Distribution of Movies Ratings
+![image](https://github.com/user-attachments/assets/cfc9192e-80b5-4df5-bf00-ec51e6c2f141)
+
+Word Cloud of Recomended movies
+![image](https://github.com/user-attachments/assets/0d32f0ce-6799-40db-abcd-d0f4b2a18a1e)
 
 ---
 
@@ -115,7 +143,7 @@ You analyzed how movie ratings changed over time:
 ---
 
 ### **Flask API**
-You implemented a basic Flask web application:
+ implemented a basic Flask web application:
 - A route `/recommend` accepts a movie title as input and returns a list of recommended movies based on Word2Vec similarity.
 
 ---
@@ -127,7 +155,7 @@ You implemented a basic Flask web application:
 ---
 
 ### **Conclusion and Insights**
-- Your recommendation system combines both **content-based** and **collaborative filtering** approaches, making it flexible and capable of recommending movies based on both movie features (overview, genre, etc.) and user preferences.
+- r recommendation system combines both **content-based** and **collaborative filtering** approaches, making it flexible and capable of recommending movies based on both movie features (overview, genre, etc.) and user preferences.
 - Visualizations of movie popularity, ratings, and trends over time provide valuable insights into movie patterns and audience behavior.
 - The use of advanced models like Word2Vec for content-based filtering enhances the accuracy of recommendations based on movie plot similarities.
 
