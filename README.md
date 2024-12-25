@@ -40,11 +40,30 @@ This project utilizes two datasets from Kaggle, providing comprehensive data abo
 
 ---
 
+
+
 ## 🛠️ **Tools and Technologies**
-- **Programming Language**: Python
-- **Libraries**: pandas, numpy, scikit-learn, matplotlib, seaborn, surprise (for building recommendation models)
-- **Algorithms Used**: Singular Value Decomposition (SVD), Content-Based Filtering, Collaborative Filtering
-- **Dataset Sources**: Kaggle
+
+This project leverages a variety of tools and libraries to process data, build models, and visualize results:
+
+### **Programming Language**:
+- **Python**: The core programming language used for developing the recommendation system.
+
+### **Libraries**:
+- **pandas**: For data manipulation and preprocessing.
+- **numpy**: For numerical operations.
+- **matplotlib** & **seaborn**: For data visualization and plotting.
+- **surprise**: A Python library for building and evaluating collaborative filtering-based recommendation systems.
+- **gensim**: For Word2Vec, a technique used to capture word semantics for content-based filtering.
+- **scikit-learn**: For machine learning algorithms and model evaluation.
+- **Flask**: To serve the recommendation system as a web service.
+- **wordcloud**: For visualizing keywords and other text data as word clouds.
+- **TfidfVectorizer**: From **scikit-learn**, used to convert a collection of text documents to a matrix of TF-IDF features for content-based filtering.
+
+### **Algorithms and Techniques**:
+- **Singular Value Decomposition (SVD)**: Used for collaborative filtering-based recommendations.
+- **Content-Based Filtering**: A method that recommends movies based on their metadata such as genre, keywords, and cast.
+- **Collaborative Filtering**: A method that recommends movies based on user-item interactions, utilizing techniques like matrix factorization.
   
 ### 🔍 **Key Insights**  
 - Combining user behavior and movie metadata provides richer recommendations.  
