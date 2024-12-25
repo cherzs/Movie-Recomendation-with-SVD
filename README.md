@@ -92,21 +92,28 @@ This project leverages a variety of tools and libraries to process data, build m
 2. **Best RMSE**: The best root mean square error (RMSE) score from the grid search was evaluated, and the parameters giving the lowest RMSE were chosen.
 3. **Prediction**: After fitting the model to the training set, the model was used to predict movie ratings.
 
-## Results
-
-### Best RMSE from GridSearchCV:
-
-| **Metric**        | **Value**            |
-|-------------------|----------------------|
-| Best RMSE Score   | 0.8915               |
-
-### RMSE on Testset:
-
-| **Metric**        | **Value**            |
-|-------------------|----------------------|
-| RMSE on Testset   | 0.8868               |
+Here's a structured summary for your results:
 
 ---
+
+## Model Results
+
+### Best RMSE Score
+- **RMSE Score**: 0.891477307669755
+
+### Hyperparameters Used:
+- **n_factors**: 150  
+- **n_epochs**: 30  
+- **lr_all**: 0.005  
+- **reg_all**: 0.1
+
+### Prediction
+- **User ID**: 1  
+- **Item ID**: 302  
+- **Actual Rating (r_ui)**: 3  
+- **Estimated Rating (est)**: 2.6947  
+- **Was the prediction impossible?**: No
+
 ---
 
 ### **Word2Vec for Content Similarity**
@@ -116,9 +123,36 @@ This project leverages a variety of tools and libraries to process data, build m
 
 #### **Example**:
 - **For "The Dark Knight Rises"**: 
-![image](https://github.com/user-attachments/assets/627e1fd9-b413-4e22-92e1-1ff73138e5c2)
+Here’s how you can format the list of movies into a table in the README:
+
+| **Index** | **Movie Title**                                      |
+|-----------|------------------------------------------------------|
+| 65        | The Dark Knight                                      |
+| 299       | Batman Forever                                       |
+| 428       | Batman Returns                                       |
+| 1359      | Batman                                               |
+| 3854      | Batman: The Dark Knight Returns, Part 2              |
+| 119       | Batman Begins                                        |
+| 2507      | Slow Burn                                            |
+| 9         | Batman v Superman: Dawn of Justice                   |
+| 1181      | JFK                                                  |
+| 210       | Batman & Robin                                       |
+
+---
 - **For "The Avengerss"**:
-![image](https://github.com/user-attachments/assets/1eec63d4-4c65-41f1-8ecd-5d7bc7b24497)
+
+| **Index** | **Movie Title**                             |
+|-----------|---------------------------------------------|
+| 7         | Avengers: Age of Ultron                    |
+| 3144      | Plastic                                    |
+| 1715      | Timecop                                    |
+| 4124      | This Thing of Ours                         |
+| 3311      | Thank You for Smoking                       |
+| 3033      | The Corruptor                               |
+| 588       | Wall Street: Money Never Sleeps             |
+| 2136      | Team America: World Police                  |
+| 1468      | The Fountain                                |
+| 1286      | Snowpiercer                                 |
 
 ---
 
@@ -151,6 +185,18 @@ Word Cloud of Recomended movies
 ### **Evaluation**
 - **Collaborative Filtering RMSE**: The RMSE (Root Mean Squared Error) for the SVD model was calculated on the test set to evaluate its performance.
 - **Best RMSE**: The model's best RMSE score from the GridSearchCV was printed, and the model showed reasonable prediction accuracy.
+  
+### Best RMSE from GridSearchCV:
+
+| **Metric**        | **Value**            |
+|-------------------|----------------------|
+| Best RMSE Score   | 0.8915               |
+
+### RMSE on Testset:
+
+| **Metric**        | **Value**            |
+|-------------------|----------------------|
+| RMSE on Testset   | 0.8868               |
 
 ---
 
