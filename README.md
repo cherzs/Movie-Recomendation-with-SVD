@@ -160,13 +160,13 @@ Here’s how you can format the list of movies into a table in the README:
  analyzed how movie ratings changed over time:
 -  grouped movies by their release year and calculated the average rating for each year.
 - **Visualization**: A line plot was generated showing the trend of average ratings over time, indicating whether movie ratings are increasing or decreasing over the years.
-![image](https://github.com/user-attachments/assets/9dd35fd4-249e-4043-bcda-ebead608fcf4)
+   ![image](https://github.com/user-attachments/assets/9dd35fd4-249e-4043-bcda-ebead608fcf4)
 
-Distribution of Movies Ratings
-![image](https://github.com/user-attachments/assets/cfc9192e-80b5-4df5-bf00-ec51e6c2f141)
+- Distribution of Movies Ratings
+   ![image](https://github.com/user-attachments/assets/cfc9192e-80b5-4df5-bf00-ec51e6c2f141)
 
-Word Cloud of Recomended movies
-![image](https://github.com/user-attachments/assets/0d32f0ce-6799-40db-abcd-d0f4b2a18a1e)
+- Word Cloud of Recomended movies
+   ![image](https://github.com/user-attachments/assets/0d32f0ce-6799-40db-abcd-d0f4b2a18a1e)
 
 ---
 
